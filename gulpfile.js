@@ -32,6 +32,8 @@ elixir(function(mix) {
        		'public/css/nodeModules.css')
        .babel([
        		'setOnMap.js',
-       		'getPolygonsBy.js'
+       		'getPolygonsBy.js',
+       		'colorByMarkers.js',
+       		'countMarkersInside.js'
        	]);
 });

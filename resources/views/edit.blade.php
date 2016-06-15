@@ -3,8 +3,6 @@
 <script src="min/plugin-min.js"></script>
 <script src="min/custom-min.js"></script>
 <script src="js/gmaps.js"></script>
-<script src="js/countMarkersInside.js"></script>
-<script src="js/colorByMarkers.js" ></script>
 <script src="js/editMap.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa8MJk2VV9QBkzjnEratB11lpuxkcxgyE&libraries=places&callback=initMap">

@@ -5,13 +5,8 @@
 <script src="min/custom-min.js"></script>
 <script src="js/gmaps.js"></script>
 <script src="js/area.js"></script>
-<script src="js/getPolygonsBy.js"></script>
-<script src="js/countMarkersInside.js"></script>
-<script src="js/colorByMarkers.js"></script>
-<script src="js/setOnMap.js"></script>
 <script src="js/generateReport.js"></script>
 <script src="js/mapa.js"></script>
-<script src="js/searchForPlaces.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa8MJk2VV9QBkzjnEratB11lpuxkcxgyE&libraries=places&callback=initMap">
 </script>
