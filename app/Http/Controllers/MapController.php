@@ -40,4 +40,8 @@ class MapController extends Controller
         $areas = Area::all();
         return view('edit', compact('areas'));
     }
+
+    public function savePolygon(){
+        return "retornado";
+    }
 }

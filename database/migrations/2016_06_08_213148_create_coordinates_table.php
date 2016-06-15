@@ -16,6 +16,7 @@ class CreateCoordinatesTable extends Migration
             $table->increments('id');
             $table->double('lat');
             $table->double('lng');
+            $table->timestamps();
             $table->integer('polygon_id')->unsigned();
             $table->foreign('polygon_id')->references('id')->on('polygons');
         });

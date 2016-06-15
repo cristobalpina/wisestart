@@ -88,7 +88,7 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">Beltrán<br/>
-                            <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
+                            <small><em><a class="red-text text-darken-1" href="#">Dog</a></em></small></span>
                         <p>
                             <a class="blue-text text-lighten-2" href="https://www.facebook.com/joash.c.pereira">
                                 <i class="fa fa-facebook-square"></i>

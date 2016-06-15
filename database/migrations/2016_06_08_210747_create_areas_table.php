@@ -17,6 +17,7 @@ class CreateAreasTable extends Migration
             $table->string('name');
             $table->double('lat');
             $table->double('lng');
+            $table->timestamps();
         });
     }
 

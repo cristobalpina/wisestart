@@ -63,7 +63,7 @@ function initMap() {
 
                         infowindow.close();
 
-                        if(typeSelect.val() && areaSelect.val() && trafficSelect.val()) {
+                        if(typeSelect.val() && areaSelect.val()) {
 
                             let lat = event.latLng.lat();
                             let lng = event.latLng.lng();
@@ -97,10 +97,7 @@ function initMap() {
                     activePolygons.push(polygon);
 
                 }
-                for(let polygon of activePolygons)
-                    {
-                        polygon.setMap(map);
-                    }
+                setOnMap(activePolygons, map);
             }
         });
     });
@@ -135,11 +132,6 @@ function initMap() {
                 break;
 
             case "bici":
-                trafficLayer.setMap(null);
-                bikeLayer.setMap(map);
-                break;
-
-            case "loco":
                 trafficLayer.setMap(null);
                 bikeLayer.setMap(map);
                 break;
