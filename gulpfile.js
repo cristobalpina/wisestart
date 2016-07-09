@@ -13,8 +13,8 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
 
-	mix.copy('node_modules/sweetalert/dist/sweetalert.min.js', 'resources/assets/js/libs')
-	   .copy('node_modules/sweetalert/dist/sweetalert.css', 'resources/assets/css/libs')
+	mix.copy('node_modules/sweetalert2/dist/sweetalert2.min.js', 'resources/assets/js/libs')
+	   .copy('node_modules/sweetalert2/dist/sweetalert2.min.css', 'resources/assets/css/libs')
        
 
        .sass('app.scss')
@@ -22,18 +22,21 @@ elixir(function(mix) {
        
 
        .scripts([
-       		'libs/sweetalert.min.js'
+       		'libs/sweetalert2.min.js'
        	],
        		 'public/js/nodeModules.js')
        
        .styles([
-       		'libs/sweetalert.css'
+       		'libs/sweetalert2.min.css'
        		],
        		'public/css/nodeModules.css')
        .babel([
        		'setOnMap.js',
        		'getPolygonsBy.js',
        		'colorByMarkers.js',
-       		'countMarkersInside.js'
+       		'countMarkersInside.js',
+                     'getAreaBy.js',
+                     'getAllAreas.js',
+                     'fillSelectWithAreas.js',
        	]);
 });

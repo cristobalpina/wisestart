@@ -14,8 +14,10 @@
 Route::get('/', 'MapController@index');
 Route::get('/edit', 'MapController@edit');
 Route::get('/area/{id}/polygons', 'MapController@getPolygons');
+Route::get('/areas', 'MapController@getAllAreas');
 Route::get('/area/{id}', 'MapController@getArea');
 Route::post('/polygons', 'PolygonController@store');
+Route::post('/areas', 'MapController@storeArea');
 Route::get('/report', function () {
     return view('report');
 });

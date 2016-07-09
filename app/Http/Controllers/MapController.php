@@ -8,6 +8,7 @@ use App\Coordinate;
 use App\Polygon;
 use App\Area;
 use App\Http\Requests;
+use DB;
 
 
 class MapController extends Controller
@@ -22,7 +23,6 @@ class MapController extends Controller
 
     	foreach ($polygons as $key => $polygon) {
     		$coordinates = Polygon::find($polygon->id)->coordinates;
-            //$areaName = Polygon::find($polygon->id)
     		$polygon->coordinates = $coordinates;
     	}
     	
@@ -43,5 +43,16 @@ class MapController extends Controller
 
     public function savePolygon(){
         return "retornado";
+    }
+
+    public function getAllAreas(){
+        return Area::all();
+    }
+
+    public function storeArea(Request $request){
+        DB::table('areas')->insertGetId([
+            'name' => $request->input('name'),
+            'lat' => $request->input('lat'),
+            'lng' => $request->input('lng')]);
     }
 }

@@ -34,14 +34,11 @@ function initMap() {
 
         activePolygons = [];
 
-        $.ajax({
-            url: "/area/"+area,
-            success: function(result){
-                activeArea = result;
-                map.panTo(result);
-            }
+        $.when(getAreaBy(area)).done(function(result){
+            activeArea = result;
+            map.panTo(result);
         });
-
+               
         $.ajax({
             url: "/area/"+area+"/polygons",
             success: function(result){
