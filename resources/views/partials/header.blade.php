@@ -5,8 +5,9 @@
     <title>EmprendeYA!</title>
 
     <!-- CSS  -->
-    <link href="min/plugin-min.css" type="text/css" rel="stylesheet">
-    <link href="min/custom-min.css" type="text/css" rel="stylesheet">
+
+    <link href="{{ URL::asset('min/plugin-min.css') }}" type="text/css" rel="stylesheet">
+    <link href="{{ URL::asset('min/custom-min.css') }}" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
@@ -15,9 +16,14 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
-  <script src="js/nodeModules.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/nodeModules.css">
-  <script src="js/all.js"></script>
+  <script src="{{ URL::asset('js/nodeModules.js') }}"></script>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/nodeModules.css') }}">
+  <script src="{{ URL::asset('js/all.js') }}"></script>
+  <script src="{{ URL::asset('min/plugin-min.js') }}"></script>
+  <script src="{{ URL::asset('min/custom-min.js') }}"></script>
+
+
+
       
     
 </head>
