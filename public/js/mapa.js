@@ -147,10 +147,11 @@ function initMap() {
             position: place.geometry.location
         });
         markers.push(marker);
-        var infowindow = new google.maps.InfoWindow({
-           content: place.name
+            infowindow = new google.maps.InfoWindow({
+            content: place.name
         });
         marker.addListener('click', function() {
+        infowindow.close()
         infowindow.open(map, marker);
 
         });

@@ -11,6 +11,11 @@ use App\Http\Requests;
 
 class PolygonController extends Controller
 {
+    public function edit($id){
+        $polygon = Polygon::findOrFail($id);
+        return view('polygons.edit', $polygon);
+    }
+
     public function store(Request $request){
     	$path = $request->input('path');
     	$area_id = $request->input('area');

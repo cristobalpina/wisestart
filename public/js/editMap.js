@@ -7,6 +7,7 @@ var userPolygon;
 var activePolygons = [];
 var activeArea;
 var userArea;
+var infowindow;
 
 function initMap() {
 
@@ -15,6 +16,9 @@ function initMap() {
         zoom: 13,
         scrollwheel: false
     });
+
+    infowindow = new google.maps.InfoWindow();
+
 	$.when(getAllAreas()).done(function(areas){
 		areaPolySelect.find('option').remove();
 		fillSelectWithAreas(areas, areaPolySelect);
@@ -28,8 +32,8 @@ function initMap() {
 
 	
 		let polyCoords = [
-     	 {lat: -33.488879 , lng: -70.549700 },
-     	 {lat: -33.486364, lng: -70.557789}
+     	 {lat: -33.488000 , lng: -70.550000 },
+     	 {lat: -33.486000, lng: -70.557000}
   		];
   		
   		 userPolygon = new google.maps.Polygon({
@@ -68,7 +72,7 @@ function initMap() {
     			draggable: true
 			});
 			activeArea.setMap(map);
-			let infowindow = new google.maps.InfoWindow({
+			infowindow = new google.maps.InfoWindow({
            		content: 'Centro de '+result.name
         	});
 			activeArea.addListener('click', function() {
@@ -86,6 +90,8 @@ function initMap() {
 		$.when(getPolygonsBy(area)).done(function(polygons){
 			for(let polygon of polygons)
 			{
+				console.log(polygon);
+				let id = polygon.id;
 				polygon = new google.maps.Polygon({
                         paths: polygon.coordinates,
                         strokeColor: '#000000',
@@ -95,6 +101,24 @@ function initMap() {
                         fillOpacity: 0.35,
                         editable: false
                       });
+				   polygon.addListener('click', function(event) {
+
+                        infowindow.close(); 
+
+                        let lat = event.latLng.lat();
+                        let lng = event.latLng.lng();
+                        let latLng = {'lat': lat, 'lng': lng};
+                        let content = '<a href="/polygons/'+id+'/edit" class="waves-effect waves-light btn blue"';
+                        	content+=' style="color: white">';
+                        	content+='Editar <i class="material-icons right">mode_edit</i></a>';
+	                    infowindow = new google.maps.InfoWindow({
+	                        content: content,
+	                        position: latLng
+	                    });
+
+	                    infowindow.open(map, polygon);
+	              
+                    });
 				activePolygons.push(polygon);
 			}
 			setOnMap(activePolygons, map);
@@ -112,8 +136,9 @@ function initMap() {
 		{
 			userArea.setMap(null);
 		}
+		activePolygons = [];
+		areaPolySelect.val(0);
 		userArea = null;
-		$(this).prop('disabled', true);
 		addPolyBtn.show();
 		addAreaBtn.show();
 		deletePolyBtn.hide();

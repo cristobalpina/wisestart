@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('scripts')
 
-<script src="min/plugin-min.js"></script>
-<script src="min/custom-min.js"></script>
+
 <script src="js/gmaps.js"></script>
 <script src="js/area.js"></script>
 <script src="js/generateReport.js"></script>
